@@ -55,13 +55,15 @@ public class StackedText : MonoBehaviour
     private void OnValidate()
     {
         Text ??= GetComponent<TMP_Text>();
-        ValidateMaterial();
+        UnityEditor.EditorApplication.delayCall += ValidateMaterial;
         EnsureShaderChannels();
         _forceUpdateNextFrame = true;
     }
 
     private void ValidateMaterial()
     {
+        UnityEditor.EditorApplication.delayCall -= ValidateMaterial;
+        
         if (Text == null || Text.font == null)
             return;
 
