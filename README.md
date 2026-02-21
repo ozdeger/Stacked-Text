@@ -1,14 +1,12 @@
-# StackedText
+<p align="center">
+  <img src="Images/example_stacked_text.png" alt="Stacked Text Example" width="720"/>
+</p>
 
 **Stylized layered text effects for TextMeshPro in Unity**
 
 StackedText is a lightweight Unity component that generates stacked, multi-layered text with customizable colors, offsets, softness, and dilation — all driven by a single `TMP_Text` component. Perfect for game titles, UI headers, and stylized labels.
 
 ---
-
-<p align="center">
-  <img src="Images/example_stacked_text.png" alt="Stacked Text Example" width="720"/>
-</p>
 
 ## Examples
 
@@ -24,6 +22,7 @@ StackedText is a lightweight Unity component that generates stacked, multi-layer
 
 ## Features
 
+- **Single Drawcall** — Embeds the parameters into texcoord3 channel to achieve single drawcall.
 - **Multiple Stack Layers** — Add as many stacks as you need, each with independent settings.
 - **Per-Layer Gradient Colors** — Assign a `Gradient` to each stack for smooth color transitions across layers.
 - **Configurable Offsets** — Set start and end offsets per stack to control the direction and depth of the effect.
@@ -41,24 +40,6 @@ StackedText is a lightweight Unity component that generates stacked, multi-layer
 |---|---|
 | Unity | 2021.3+ |
 | TextMeshPro | Built-in (via Package Manager) |
-
----
-
-## Installation
-
-### Option A — Copy the Script
-
-1. Download or clone this repository.
-2. Copy `StackedText.cs` into your project's `Assets/` folder (or any subfolder).
-
-### Option B — Unity Package Manager (Git URL)
-
-1. Open **Window → Package Manager**.
-2. Click **+** → **Add package from git URL…**
-3. Paste:
-   ```
-   https://github.com/<your-username>/StackedText.git
-   ```
 
 ---
 
@@ -111,13 +92,6 @@ stackedText.SetStacks(new List<StackedText.StackConfig>
 {
     StackedText.StackConfig.CreateDefault()
 });
-```
-
-```csharp
-// Compute curved vertex offsets for external use
-StackedText.TryGetCurvedVertexOffsets(
-    tmpText, curve, curveScale, referenceWidth, keepCentered, offsetsList
-);
 ```
 
 ---
