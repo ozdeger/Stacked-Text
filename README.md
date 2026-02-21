@@ -24,6 +24,7 @@ StackedText is a lightweight Unity component that generates stacked, multi-layer
 
 ## Features
 
+- **Single Drawcall** — Embeds the parameters into texcoord3 channel to achieve single drawcall.
 - **Multiple Stack Layers** — Add as many stacks as you need, each with independent settings.
 - **Per-Layer Gradient Colors** — Assign a `Gradient` to each stack for smooth color transitions across layers.
 - **Configurable Offsets** — Set start and end offsets per stack to control the direction and depth of the effect.
